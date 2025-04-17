@@ -8,6 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Root route - Home page for the server
+app.get('/', (req, res) => {
+  res.send('Welcome to the Ziina Checkout API! 🚀');
+});
+
 // Ziina payment link endpoint
 app.post('/create-ziina-payment', async (req, res) => {
   const { amount, email, phone } = req.body;
